@@ -7,7 +7,7 @@ description = "A high-performance GPU vector text rendering plugin for Bevy."
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/yuanyan3060/bevy_slugtext"
-keywords = ["bevy", "render", "text", "vector", "gpu", "3d", "slug"]
+keywords = ["bevy", "render", "text", "3d", "slug"]
 categories = ["game-engines", "rendering"]
 exclude = ["assets/*"]
 
