@@ -1,0 +1,16 @@
+[package]
+name = "bevy_slugtext"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bevy = { version = "0.18.1", default-features = false, features = [
+    "bevy_asset",
+    "bevy_text",
+    "bevy_pbr",
+    "bevy_render",
+] }
+ttf-parser = "0.25.1"
+
+[dev-dependencies]
+bevy = { version = "0.18.1" }
