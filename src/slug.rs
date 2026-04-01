@@ -144,7 +144,7 @@ impl PreparedText {
             TextureDimension::D2,
             data,
             TextureFormat::Rgba32Float,
-            RenderAssetUsages::all(),
+            RenderAssetUsages::RENDER_WORLD,
         );
         curve_image.texture_descriptor.usage =
             TextureUsages::TEXTURE_BINDING | TextureUsages::COPY_DST;
