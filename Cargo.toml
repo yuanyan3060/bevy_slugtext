@@ -17,7 +17,10 @@ bevy = { version = "0.19.0", default-features = false, features = [
     "bevy_text",
     "bevy_pbr",
     "bevy_render",
+    "bevy_ui",
+    "bevy_ui_render",
 ] }
+bytemuck = { version = "1", features = ["derive"] }
 ttf-parser = "0.25.1"
 
 [dev-dependencies]

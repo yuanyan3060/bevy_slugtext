@@ -8,8 +8,8 @@ use bevy::render::render_resource::{Extent3d, TextureDimension, TextureFormat, T
 use ttf_parser::{Face, GlyphId, OutlineBuilder, Rect};
 
 const LINE_EPSILON: f32 = 0.125;
-const TEX_WIDTH: usize = 4096;
-const DEFAULT_BAND_COUNT: usize = 8;
+pub(crate) const TEX_WIDTH: usize = 4096;
+pub(crate) const DEFAULT_BAND_COUNT: usize = 8;
 
 const _: () = {
     assert!(Mesh::FIRST_AVAILABLE_CUSTOM_ATTRIBUTE == 8);
@@ -335,14 +335,14 @@ fn rect_to_bounds(rect: Rect) -> Bounds {
     }
 }
 
-fn extract_curves(face: &Face<'_>, glyph_id: GlyphId) -> Option<(Vec<QuadCurve>, Bounds)> {
+pub(crate) fn extract_curves(face: &Face<'_>, glyph_id: GlyphId) -> Option<(Vec<QuadCurve>, Bounds)> {
     let rect = face.glyph_bounding_box(glyph_id)?;
     let mut builder = CurveBuilder::default();
     face.outline_glyph(glyph_id, &mut builder)?;
     Some((builder.into_curves(), rect_to_bounds(rect)))
 }
 
-fn build_bands(curves: &[QuadCurve], bounds: &Bounds, band_count: usize) -> GlyphBands {
+pub(crate) fn build_bands(curves: &[QuadCurve], bounds: &Bounds, band_count: usize) -> GlyphBands {
     let mut h_bands = vec![BandEntry::default(); band_count];
     let mut v_bands = vec![BandEntry::default(); band_count];
 
